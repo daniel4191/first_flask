@@ -1,0 +1,10 @@
+{% extends 'test.html' %}
+
+{% block content %}
+<!-- 이렇게 변 수 뒤에 파이썬 내장 기능을 써주면 그것대로 필터링이 되어서 작동 된다.-->
+<h1>This is puppy page for: {{ name|capitalize }}</h1>
+<!-- url_for의 활용되는 모습을 잘 보자. 정적 이미지(로컬 폴더 안에 있는것)를 사용할때는
+정적 이미지를 보통 static에 넣어서 사용해준다.(만약 구분을 picture, video로 구분해야할 때는 video/이미지경로)
+이렇게 해줘야하는 것 같기도 하다)-->
+<a href="{{ url_for('static', filename='puppy.jpg') }}">Here</a>
+{% endblock  %}

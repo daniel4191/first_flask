@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+<!-- report.html에 대한 코드도 모두 알려주는 대로 했다. 갈길이 멀다. -->
+{% block content %}
+<div class="jumbotron">
+    <p>Let's check your username!</p>
+    {% if report %}
+    <p>Your username passed all checks!</p>
+    {% else %}
+    <ul>
+        {% if not lower %}
+        <li>You did not use a lowercase letter in your username</li>
+        {% endif %}
+        {% if not upper %}
+        <li>You did not use a uppercase letter in your username</li>
+        {% endif %}
+        {% if not num_end %}
+        <li>You did not use end in a number in your username</li>
+        {% endif %}
+    </ul>
+    {% endif %}
+</div>
+{% endblock  %}
